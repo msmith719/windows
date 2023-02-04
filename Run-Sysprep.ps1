@@ -1,17 +1,14 @@
 <#
-
 .SYNOPSIS
-Basic sysprep menu
-
+    Basic sysprep menu
 .DESCRIPTION
-Basic menu script with options for how to run Sysprep. Great to use to make a VM Template or machine image.
-
-It also does a little setup and cleanup.
-
+    Basic menu script with options for running Sysprep. 
+    Great to use to make a VM Template or machine image.
+    It also does a little setup and Run-CleanUp.
 #>
 
 
-function CleanUp {
+function Run-CleanUp {
     Write-Host "Clearing the Quick Access History..."
     echo "y" > cmd.exe /c del /f /s /q /a "%AppData%\Microsoft\Windows\Recent\AutomaticDestinations\f01b4d95cf55d32a.automaticDestinations-ms"
 
@@ -94,12 +91,12 @@ $deploy | Out-File $sysprepDirectory\deploy.xml
 
 Switch ($option) {
     1 {
-        CleanUp
+        Run-CleanUp
         Write-Host "Running Sysprep to skip OOBE, then Shutting down."
         $sysprepCommand = "C:\Windows\System32\Sysprep\sysprep.exe /oobe /generalize /unattend:$sysprepDirectory\deploy.xml /shutdown"
         }
     2 {
-        CleanUp
+        Run-CleanUp
         Write-Host "Running Sysprep to skip OOBE, then Rebooting."
         $sysprepCommand = "C:\Windows\System32\Sysprep\sysprep.exe /oobe /generalize /unattend:$sysprepDirectory\deploy.xml /reboot"
         }
