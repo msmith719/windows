@@ -1,2 +1,2 @@
 # windows
-Microsoft windows notes, scripts, etc.
+Microsoft Windows notes, scripts, etc.
