@@ -1,5 +1,6 @@
 # SSH
-This is only meant to be a guide for a starting point. Always implement security best practices, and routinely audit what is still setup in prod and even test enviroments. Also check the stuff you have forgotten about as well. :grinning:
+
+:heavy_exclamation_mark: This is only meant to be a guide for a starting point. Always implement security best practices, and routinely audit what is still setup in prod and even test enviroments. Also check the stuff you have forgotten about as well. :grinning:
 
 ## Generate New Key Pair
 ``` ps1
