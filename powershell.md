@@ -1,5 +1,16 @@
 # PowerShell (PoSh)
 
+## Download PowerShell scripts from GitHub
+Download a .ps1 script to the current directory using the `Invoke-WebRequest` cmdlet.
+```
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/msmith719/windows/main/Run-Sysprep.ps1 -OutFile .\Run-Sysprep.ps1
+```
+To download and run a script, you can use a one-liner like
+```
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/msmith719/windows/main/Run-Sysprep.ps1 -OutFile .\Run-Sysprep.ps1; .\Run-Sysprep.ps1
+```
+Always read through any code you find online and make sure you trust it before running it.
+
 ## winget
 winget is the Windows package manager. You can get help with the command and list all of the related commands by running`winget --help`.
 
