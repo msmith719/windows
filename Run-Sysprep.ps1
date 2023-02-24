@@ -4,11 +4,10 @@
 .DESCRIPTION
     Basic menu script with options for running Sysprep. 
     Great to use to make a VM Template or machine image.
-    It also does a little setup and Run-CleanUp.
+    It also does a little setup and Invoke-CleanUp.
 #>
 
-
-function Run-CleanUp {
+function Invoke-CleanUp {
     Write-Host "Clearing the Quick Access History..."
     echo "y" > cmd.exe /c del /f /s /q /a "%AppData%\Microsoft\Windows\Recent\AutomaticDestinations\f01b4d95cf55d32a.automaticDestinations-ms"
 
@@ -25,13 +24,14 @@ function Run-CleanUp {
     }  
 }
 
-Write-Host "Welcome. We are about to run get the template ready." 
+Write-Host "Welcome. We are about to run Sysprep and get the template ready." 
 
 Write-Host "Setting Timezone..." 
 Set-TimeZone -name "Eastern Standard Time" # To see timezones, use command Get-TimeZone -ListAvailable
 
 Write-Host "Be sure to enable Remote Desktop..." -ForegroundColor Yellow; Pause
 <#
+# Will need to work on fixing this
 Write-Host "Enabling Remote Desktop..." 
 Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -name "fDenyTSConnections" -value 0
 Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
@@ -91,12 +91,12 @@ $deploy | Out-File $sysprepDirectory\deploy.xml
 
 Switch ($option) {
     1 {
-        Run-CleanUp
+        Invoke-CleanUp
         Write-Host "Running Sysprep to skip OOBE, then Shutting down."
         $sysprepCommand = "C:\Windows\System32\Sysprep\sysprep.exe /oobe /generalize /unattend:$sysprepDirectory\deploy.xml /shutdown"
         }
     2 {
-        Run-CleanUp
+        Invoke-CleanUp
         Write-Host "Running Sysprep to skip OOBE, then Rebooting."
         $sysprepCommand = "C:\Windows\System32\Sysprep\sysprep.exe /oobe /generalize /unattend:$sysprepDirectory\deploy.xml /reboot"
         }

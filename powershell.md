@@ -27,6 +27,7 @@ You can search for packages using `winget search <appname>`. For example `winget
 To install the package, you need to specify the package Id. Examples:
 ``` ps1
 winget install Balena.Etcher
+winget install Google.Chrome
 winget install Brave.Brave
 winget install Greenshot.Greenshot
 winget install Microsoft.VisualStudioCode
