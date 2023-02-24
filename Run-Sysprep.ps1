@@ -4,7 +4,7 @@
 .DESCRIPTION
     Basic menu script with options for running Sysprep. 
     Great to use to make a VM Template or machine image.
-    It also does a little setup and Invoke-CleanUp.
+    It also does a little setup and clean up.
 #>
 
 function Invoke-CleanUp {
