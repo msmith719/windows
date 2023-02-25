@@ -36,6 +36,8 @@ rumor1@solo7=choke5!pupil9-MARSH4#SLAP2$
 This password has been copied to the clipboard.
 .NOTES
 Author: msmith719
+
+Planned Improvements: Cache the json file instead of downloading it each time.
 #>
 
 function Invoke-PasswordGen {
