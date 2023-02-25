@@ -1,10 +1,20 @@
 <#
 .SYNOPSIS
-    Basic sysprep menu
+Basic sysprep menu
 .DESCRIPTION
-    Basic menu script with options for running Sysprep. 
-    Great to use to make a VM Template or machine image.
-    It also does a little setup and clean up.
+Basic menu script with options for running Sysprep. Great to use to make a VM Template or machine image. It also does a little setup and clean up.
+.INPUTS
+None
+.OUTPUTS
+None
+.EXAMPLE
+Run-Sysprep
+.NOTES
+Author: msmith719
+
+Possible Improvements: 
+1) Rename script to use and approved verb. Possible name: Invoke-Sysprep.
+2) Add code to enable Remote Desktop
 #>
 
 function Invoke-CleanUp {
