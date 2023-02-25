@@ -37,7 +37,9 @@ This password has been copied to the clipboard.
 .NOTES
 Author: msmith719
 
-Planned Improvements: Cache the json file instead of downloading it each time.
+Possible Improvements: 
+1) Cache the json file instead of downloading it each time.
+2) Create a -Local parameter that uses the cached json file if available and uses the $wordList  array if the json does not exist. Could also support an imput for a word list.
 #>
 
 function Invoke-PasswordGen {
