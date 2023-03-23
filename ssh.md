@@ -18,8 +18,10 @@ Start-Service ssh-agent
 ``` ps1
 ssh-add.exe c:\users\<username>\.ssh\id_rsa
 ```
+## HP Procurve switches
+You can use `sh ip ssh` to display ssh related info (ciphers, key info, etc.)
 
-## HP Procurve 3500-48G-PoE yl J8693A
+### HP Procurve 3500-48G-PoE yl J8693A
 In the directory `c:\users\<username>\.ssh`, make file named `config` (no file extension) if it does not exist.
 
 Add the following to that config file:
@@ -31,7 +33,7 @@ User manager
 Hostname <switch IP>
 ```
 
-## HP Procurve 2810-48G J9022A
+### HP Procurve 2810-48G J9022A
 In the directory `c:\users\<username>\.ssh`, make file named `config` (no file extension) if it does not exist.
 
 Add the following to that config file:
